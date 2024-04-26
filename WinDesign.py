@@ -1,5 +1,6 @@
 from tkinter import Tk
 from tkinter import PhotoImage
+from tkinter import Frame
 
 from tkinter.ttk import Notebook
 
@@ -19,10 +20,21 @@ class Window:
 
     def __init_notebook__(self):
         self.nb = Notebook(self.tk)
-        self.nb.place(relx=1, rely=1)
+        self.nb.place(x=0, y=0, relwidth=1, relheight=1)
+
+        self.nb_p1 = Frame(self.tk)
+        self.nb_p1.place(x=0, y=0, relwidth=1, relheight=1)
+
+        self.nb_p2 = Frame(self.tk)
+        self.nb_p2.place(x=0, y=0, relwidth=1, relheight=1)
+
+        self.nb.add(self.nb_p1, text="Page 1")
+        self.nb.add(self.nb_p2, text="Page 2")
 
     def __init_nb_p1__(self):
         pass
+
+
 
     def run(self):
         self.tk.mainloop()
